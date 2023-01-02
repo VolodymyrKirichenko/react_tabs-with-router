@@ -4,6 +4,8 @@ import './App.scss';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { NavBar } from '../Navigation/NavBar/NavBar';
 import { TabsPage } from '../Pages/TabsPage/TabsPage';
+import { HomePage } from '../Pages/HomePage/HomePage';
+import { ErrorPage } from '../Pages/ErrorPage/ErrorPage';
 
 export const App = () => (
   <>
@@ -12,9 +14,9 @@ export const App = () => (
     <div className="section">
       <div className="container">
         <Routes>
-          <Route path="/" element={<h1 className="title">Home Page</h1>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
-          <Route path="*" element={<h1 className="title">Page not found</h1>} />
+          <Route path="*" element={<ErrorPage />} />
           <Route path="tabs">
             <Route index element={<TabsPage />} />
             <Route path=":tabId" element={<TabsPage />} />

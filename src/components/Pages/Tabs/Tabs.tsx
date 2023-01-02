@@ -32,7 +32,10 @@ export const Tabs: FC<Props> = (props) => {
         </ul>
       </div>
 
-      <div className="block" data-cy="TabContent">
+      <div
+        className="block"
+        data-cy="TabContent"
+      >
         {selectedTab ? selectedTab.content : 'Please select a tab'}
       </div>
     </>
